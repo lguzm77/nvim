@@ -1,0 +1,2 @@
+# mynvim
+Personal nvim setup
