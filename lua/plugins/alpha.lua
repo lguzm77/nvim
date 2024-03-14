@@ -28,8 +28,4 @@ return {
 
     alpha.setup(dashboard.opts)
   end,
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> c96bd02 (Add new keymappings)
