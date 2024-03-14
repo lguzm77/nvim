@@ -14,5 +14,9 @@ return {
     })
 
     vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
+<<<<<<< HEAD
+=======
+    vim.keymap.set("v", "<leader>gf", vim.lsp.buf.format, {}) -- format selection
+>>>>>>> c96bd02 (Add new keymappings)
   end,
 }
