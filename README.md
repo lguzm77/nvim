@@ -30,6 +30,7 @@ To install lsps and linters, use the `:Mason command`
 - Gitsigns
 - vimfugitive
 - alpha
+- nvim-dap 
 
 ## Useless plugins 
 
@@ -39,5 +40,7 @@ To install lsps and linters, use the `:Mason command`
 
 - [harper-lsp]()https://github.com/elijah-potter/harper/blob/master/harper-ls/README.md : grammar lsp server
 - [marksman-lsp](https://github.com/artempyanykh/marksman): markdown lsp server
+
 - lazygit 
-- Debugger (DAP)
+
+- Add node js DAP configuration
