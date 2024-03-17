@@ -3,7 +3,7 @@ Personal nvim setup
 
 ## Instalation -MACOS
 
-Copy this repository under `~/.conf/`
+Copy this repository under `~/.config/`
 
 Make sure neovim is installed, you can install nvim with the following command
 
@@ -17,7 +17,7 @@ To support `fastgrep`, install ripgrep
 brew install ripgrep
 ```
 
-To install lsps and linters use the `:Mason command`
+To install lsps and linters, use the `:Mason command`
 
 ## List of plugings used in this setup
 
@@ -29,7 +29,7 @@ To install lsps and linters use the `:Mason command`
 - None-ls/Null-ls
 - Gitsigns
 - vimfugitive
-- allpha
+- alpha
 
 ## Useless plugins 
 
@@ -40,3 +40,4 @@ To install lsps and linters use the `:Mason command`
 - [harper-lsp]()https://github.com/elijah-potter/harper/blob/master/harper-ls/README.md : grammar lsp server
 - [marksman-lsp](https://github.com/artempyanykh/marksman): markdown lsp server
 - lazygit 
+- Debugger (DAP)
