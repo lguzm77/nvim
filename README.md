@@ -31,6 +31,9 @@ To install lsps and linters use the `:Mason command`
 - vimfugitive
 - allpha
 
+## Useless plugins 
+
+- cellular-automaton
 
 # Pending integrations
 
