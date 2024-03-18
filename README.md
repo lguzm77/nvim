@@ -31,6 +31,7 @@ To install lsps and linters, use the `:Mason command`
 - vimfugitive
 - alpha
 - nvim-dap 
+- vim-visual-multi
 
 ## Useless plugins 
 
@@ -44,3 +45,5 @@ To install lsps and linters, use the `:Mason command`
 - lazygit 
 
 - Add node js DAP configuration
+
+- add octo.nvim or use lazygit

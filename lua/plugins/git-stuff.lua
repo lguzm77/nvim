@@ -1,4 +1,5 @@
 return {
+--TODO: install octo.nvim
   {
     "tpope/vim-fugitive",
   },
