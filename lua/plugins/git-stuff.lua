@@ -1,14 +1,15 @@
 return {
---TODO: install octo.nvim
-  {
-    "tpope/vim-fugitive",
-  },
-  {
-    "lewis6991/gitsigns.nvim",
-    config = function()
-      require("gitsigns").setup()
-      vim.keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", {})
-      vim.keymap.set("n", "<leader>gt", ":Gitsigns toggle_current_line_blame<CR>", {})
-    end,
-  },
+	--TODO: install octo.nvim
+	{
+		"tpope/vim-fugitive",
+		dependencies = { "tpope/vim-rhubarb" },
+	},
+	{
+		"lewis6991/gitsigns.nvim",
+		config = function()
+			require("gitsigns").setup()
+			vim.keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", {})
+			vim.keymap.set("n", "<leader>gt", ":Gitsigns toggle_current_line_blame<CR>", {})
+		end,
+	},
 }
