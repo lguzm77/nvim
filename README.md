@@ -39,11 +39,7 @@ To install lsps and linters, use the `:Mason command`
 
 # Pending integrations
 
-- [harper-lsp]()https://github.com/elijah-potter/harper/blob/master/harper-ls/README.md : grammar lsp server
+- [harper-lsp](https://github.com/elijah-potter/harper/blob/master/harper-ls/README.md) : grammar lsp server
 - [marksman-lsp](https://github.com/artempyanykh/marksman): markdown lsp server
-
-- lazygit 
-
 - Add node js DAP configuration
-
 - add octo.nvim or use lazygit
