@@ -7,6 +7,11 @@ vim.g.mapleader = " " --alias for leader
 vim.cmd("cd %:p:h") -- set current directory as base
 vim.wo.relativenumber = true
 
-local opts = {noremap = true}
+local opts = { noremap = true }
 vim.api.nvim_set_keymap("n", "<C-d>", "<C-d>zz", opts) -- zz centers your cursor
 vim.api.nvim_set_keymap("n","<C-u>", "<C-u>zz", opts)
+
+-- center cursor when iterating a search option
+vim.api.nvim_set_keymap("n", "n" , "nzzzv", {})
+vim.api.nvim_set_keymap("n", "N" , "Nzzzv", {})
+
