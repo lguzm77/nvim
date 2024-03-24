@@ -2,6 +2,14 @@ return {
 	{
 		"williamboman/mason.nvim",
 		lazy = false,
+		opts = {
+			ensure_installed = {
+				"eslint-lsp",
+				"js-debug-adapter",
+				"prettier",
+				"typescript-language-server",
+			},
+		},
 		config = function()
 			require("mason").setup()
 		end,
@@ -11,7 +19,7 @@ return {
 		lazy = false,
 		config = function()
 			require("mason-lspconfig").setup({
-        auto_install = true,
+				auto_install = true,
 			})
 		end,
 	},
