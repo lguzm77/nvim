@@ -37,13 +37,3 @@ To install lsps and linters, use the `:Mason command`
 
 - cellular-automaton
 
-# Pending integrations
-
-- [harper-lsp](https://github.com/elijah-potter/harper/blob/master/harper-ls/README.md) : grammar lsp server
-- [marksman-lsp](https://github.com/artempyanykh/marksman): markdown lsp server
-- Add node js DAP configuration
-- add octo.nvim or use lazygit
-
-# Improvements
-
-- Make fuzzy finder selections always center (might be with zz)
