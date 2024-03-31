@@ -2,15 +2,6 @@ return {
 	{
 		"williamboman/mason.nvim",
 		lazy = false,
-		opts = {
-			ensure_installed = {
-				"eslint-lsp",
-				"js-debug-adapter",
-				"prettier",
-				"typescript-language-server",
-				"rust-analyzer",
-			},
-		},
 		config = function()
 			require("mason").setup()
 		end,
@@ -40,6 +31,8 @@ return {
 			lspconfig.rust_analyzer.setup({
 				capabilities = capabilities,
 			})
+
+      lspconfig.harper_ls.setup({capabilities = capabilities})
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
