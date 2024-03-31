@@ -8,6 +8,7 @@ return {
 				"js-debug-adapter",
 				"prettier",
 				"typescript-language-server",
+				"rust-analyzer",
 			},
 		},
 		config = function()
@@ -34,6 +35,9 @@ return {
 				capabilities = capabilities,
 			})
 			lspconfig.tsserver.setup({
+				capabilities = capabilities,
+			})
+			lspconfig.rust_analyzer.setup({
 				capabilities = capabilities,
 			})
 
