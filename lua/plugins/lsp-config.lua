@@ -25,7 +25,7 @@ return {
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
 			})
-			lspconfig.tsserver.setup({
+			lspconfig.tsserver.setup({ -- you need to run npm install -g typescript typescript-language-server 
 				capabilities = capabilities,
 			})
 			lspconfig.rust_analyzer.setup({
