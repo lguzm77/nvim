@@ -4,7 +4,7 @@ return {
   priority = 1000,
   opts = {},
 	config = function()
-		require("tokyonight").setup({style="night", transparent = true})
+		require("tokyonight").setup({style="night", transparent = false})
 
     vim.cmd[[colorscheme tokyonight]]
 		vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#F7E7CE", bold = true })
