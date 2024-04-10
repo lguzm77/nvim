@@ -15,8 +15,7 @@ return {
 		"tpope/vim-fugitive",
 		dependencies = { "tpope/vim-rhubarb" },
 		config = function()
-			vim.keymap.set("n", "<leader>op", ":GBrowse<CR>", {})
-			vim.keymap.set("v", "<leader>op", ":GBrowse<CR>", {})
+			vim.keymap.set({ "n", "v" }, "<leader>op", ":GBrowse<CR>", {})
 		end,
 	},
 	{
