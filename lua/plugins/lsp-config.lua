@@ -25,14 +25,14 @@ return {
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
 			})
-			lspconfig.tsserver.setup({ -- you need to run npm install -g typescript typescript-language-server 
+			lspconfig.tsserver.setup({ -- you need to run npm install -g typescript typescript-language-server
 				capabilities = capabilities,
 			})
 			lspconfig.rust_analyzer.setup({
 				capabilities = capabilities,
 			})
 
-			lspconfig.harper_ls.setup({ capabilities = capabilities })
+			lspconfig.omnisharp.setup({ capabilities = capabilities })
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})

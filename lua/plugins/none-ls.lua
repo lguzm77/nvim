@@ -11,7 +11,10 @@ return {
 				-- You need to install these manually via :Mason
 				null_ls.builtins.formatting.stylua,
 				null_ls.builtins.formatting.prettier,
+        null_ls.builtins.diagnostics.codespell,
+        null_ls.builtins.formatting.csharpier,
 				eslint_d,
+
 			},
 		})
 
