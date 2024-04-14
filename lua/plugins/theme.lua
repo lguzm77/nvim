@@ -12,7 +12,7 @@ return {
         -- Value is any valid attr-list value for `:help nvim_set_hl`
         comments = { italic = true, bold = true },
         keywords = { italic = true, bold = true },
-        functions = { bold = true },
+        functions = { italic = true, bold = true },
       },
     })
 

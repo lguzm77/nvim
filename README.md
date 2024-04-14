@@ -1,4 +1,4 @@
-# mynvim
+  # mynvim
 Personal nvim setup
 
 ## Instalation -MACOS
