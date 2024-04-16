@@ -15,5 +15,6 @@ vim.cmd("cd %:p:h") -- set current directory as base
 vim.cmd("set wrap")
 vim.cmd("set breakindent")
 vim.cmd("set linebreak")
+vim.opt.laststatus = 3
 
 
