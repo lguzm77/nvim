@@ -1,8 +1,6 @@
--- define common options
 local opts = {
     noremap = true,      -- non-recursive
 }
-
 -----------------
 -- Normal mode --
 -----------------
@@ -29,11 +27,12 @@ vim.keymap.set('n', '<C-Right>', ':vertical resize +2<CR>', opts)
 vim.keymap.set('v', '<', '<gv', opts)
 vim.keymap.set('v', '>', '>gv', opts)
 
-vim.api.nvim_set_keymap("n", "<C-d>", "<C-d>zz", opts) -- zz centers your cursor
-vim.api.nvim_set_keymap("n", "<C-u>", "<C-u>zz", opts)
 -- stop highlighting when searching
 vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>")
--- center cursor when iterating a search option
-vim.api.nvim_set_keymap("n", "n", "nzzzv", {})
-vim.api.nvim_set_keymap("n", "N", "Nzzzv", {})
-
+-- center cursor when moving vertically 
+vim.api.nvim_set_keymap("n", "n", "nzzzv", opts)
+vim.api.nvim_set_keymap("n", "N", "Nzzzv", opts)
+vim.api.nvim_set_keymap("n", "{", "{zz", opts)
+vim.api.nvim_set_keymap("n", "<C-d>", "<C-d>zz", opts) -- zz centers your cursor
+vim.api.nvim_set_keymap("n", "<C-u>", "<C-u>zz", opts)
+vim.api.nvim_set_keymap("n", "}", "}zz", opts)
