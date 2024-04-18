@@ -19,6 +19,9 @@ vim.keymap.set('n', '<C-Down>', ':resize +2<CR>', opts)
 vim.keymap.set('n', '<C-Left>', ':vertical resize -2<CR>', opts)
 vim.keymap.set('n', '<C-Right>', ':vertical resize +2<CR>', opts)
 
+
+-- TODO: add tmux navigator keybindings again
+
 -----------------
 -- Visual mode --
 -----------------

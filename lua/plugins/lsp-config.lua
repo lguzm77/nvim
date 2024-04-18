@@ -32,11 +32,15 @@ return {
 				capabilities = capabilities,
 			})
 
+      -- TODO: copy the omnisharp command 
 			lspconfig.omnisharp.setup({ capabilities = capabilities })
 
-			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
+      -- TODO: explore more lsp functionalities and add keybindings
+			vim.keymap.set("n", "<leader>k", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
+			vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
 			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
+			vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {})
 		end,
 	},
 }
