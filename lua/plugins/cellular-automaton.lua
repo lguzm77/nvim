@@ -1,8 +1,7 @@
 return {
-
   "Eandrju/cellular-automaton.nvim",
-  config = function ()
+  event = { "BufReadPre" },
+  config = function()
     vim.keymap.set("n", "<leader>fml", ":CellularAutomaton make_it_rain<CR>")
-  end
-
+  end,
 }
