@@ -5,8 +5,8 @@ return {
   opts = {},
   config = function()
     require("tokyonight").setup({
-      style = "storm",
-      transparent = true,
+      style = "night",
+      transparent = false,
       styles = {
         -- Style to be applied to different syntax groups
         -- Value is any valid attr-list value for `:help nvim_set_hl`
