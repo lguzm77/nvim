@@ -2,9 +2,7 @@ return {
 	{
 		"williamboman/mason.nvim",
 		lazy = false,
-		config = function()
-			require("mason").setup()
-		end,
+		config = true,
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",
@@ -32,10 +30,10 @@ return {
 				capabilities = capabilities,
 			})
 
-      -- TODO: copy the omnisharp command 
+			-- TODO: copy the omnisharp command
 			lspconfig.omnisharp.setup({ capabilities = capabilities })
 
-      -- TODO: explore more lsp functionalities and add keybindings
+			-- TODO: explore more lsp functionalities and add keybindings
 			vim.keymap.set("n", "<leader>k", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
 			vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
