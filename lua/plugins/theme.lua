@@ -5,7 +5,7 @@ return {
   opts = {},
   config = function()
     require("tokyonight").setup({
-      style = "night",
+      style = "storm",
       transparent = false,
       styles = {
         -- Style to be applied to different syntax groups

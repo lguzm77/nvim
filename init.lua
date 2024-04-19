@@ -14,4 +14,5 @@ vim.opt.rtp:prepend(lazypath)
 
 require("vim-options")
 require("keymappings")
+-- TODO: organize your imports into subfolders
 require("lazy").setup("plugins")
