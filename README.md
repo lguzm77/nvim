@@ -1,7 +1,7 @@
   # mynvim
 Personal nvim setup
 
-## Instalation -MACOS
+## installation -MACOS
 
 Copy this repository under `~/.config/`
 
@@ -37,3 +37,11 @@ To install lsps and linters, use the `:Mason command`
 
 - cellular-automaton
 
+## Improvements
+
+- Add lsp/linter/renderer for Markdown Files
+- Grammar LSP 
+- Replace none-ls/null-ls
+- Add lsp/linter for bash 
+- Add lsp/linter for python3 
+- Re structure your plugins directory 
