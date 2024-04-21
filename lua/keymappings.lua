@@ -19,9 +19,6 @@ vim.keymap.set('n', '<C-Down>', ':resize +2<CR>', opts)
 vim.keymap.set('n', '<C-Left>', ':vertical resize -2<CR>', opts)
 vim.keymap.set('n', '<C-Right>', ':vertical resize +2<CR>', opts)
 
-
--- TODO: add tmux navigator keybindings again
-
 -----------------
 -- Visual mode --
 -----------------
@@ -40,8 +37,3 @@ vim.api.nvim_set_keymap("n", "<C-d>", "<C-d>zz", opts) -- zz centers your cursor
 vim.api.nvim_set_keymap("n", "<C-u>", "<C-u>zz", opts)
 vim.api.nvim_set_keymap("n", "}", "}zz", opts)
 
--- Navigate vim panes better
-vim.keymap.set("n", "<c-k>", ":wincmd k<CR>")
-vim.keymap.set("n", "<c-j>", ":wincmd j<CR>")
-vim.keymap.set("n", "<c-h>", ":wincmd h<CR>")
-vim.keymap.set("n", "<c-l>", ":wincmd l<CR>")
