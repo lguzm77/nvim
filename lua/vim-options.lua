@@ -1,11 +1,15 @@
-vim.opt.clipboard = 'unnamedplus'   -- use system clipboard 
+local opt = vim.opt
+
+opt.clipboard:append("unnamedplus") -- use system clipboard as default register
+opt.termguicolors = true
+
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
 
 vim.g.mapleader = " "
-vim.g.background = "light"
+vim.g.background = "dark"
 
 vim.wo.number = true
 vim.wo.relativenumber = true
