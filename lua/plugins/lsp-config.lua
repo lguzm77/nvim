@@ -39,16 +39,16 @@ return {
           RoslynExtensionsOptions = {
             EnableAnalyzersSupport = true,
             AnalyzeOpenDocumentsOnly = true,
-          }
-        }
+          },
+        },
       })
 
       -- TODO: explore more lsp functionalities and add keybindings
-      vim.keymap.set("n", "<leader>k", vim.lsp.buf.hover, {})
-      vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
-      vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
-      vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
-      vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {})
+      vim.keymap.set("n", "<leader>k", vim.lsp.buf.hover, { desc = "Hover over word for lsp suggestions " })
+      vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { desc = "Go to definition" })
+      vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, { desc = "See keyword references" })
+      vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "See available code actions" })
+      vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "rename variable" })
     end,
   },
 }
