@@ -18,7 +18,16 @@ return {
 			{ "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
 			{ "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
 		},
-		opts = { debug = true, window = { layout = "float", relative = "cursor" } },
+		opts = {
+			debug = true,
+			window = {
+				layout = "float",
+				relative = "cursor",
+				width = 1,
+				height = 0.4,
+				row = 1,
+			},
+		},
 		keys = {
 			{
 				"<leader>ccq",
@@ -38,7 +47,6 @@ return {
 				end,
 				desc = "CopilotChat - Help actions",
 			},
-			-- Show prompts actions with telescope
 			{
 				"<leader>ccp",
 				function()
