@@ -4,16 +4,23 @@ return {
 	config = function()
 		local nvimtree = require("nvim-tree")
 
-
 		nvimtree.setup({
-      disable_netrw = false,
-      hijack_netrw = true,
+			disable_netrw = false,
+			hijack_netrw = true,
 			view = {
-				width = 35,
+				centralize_selection = true,
+				width = 30,
 				side = "right",
+				number = true,
 				relativenumber = true,
 			},
 			-- change folder arrow icons
+			icons = {
+				glyphs = {
+					folder = {},
+					git = {},
+				},
+			},
 			renderer = {
 				indent_markers = {
 					enable = true,
