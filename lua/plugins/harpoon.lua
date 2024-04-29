@@ -11,11 +11,12 @@ return {
     vim.keymap.set("n", "<leader>a", mark.add_file, { desc = "Mark file for quick harpoon access" })
     vim.keymap.set("n", "<C-e>", ui.toggle_quick_menu)
 
-    vim.keymap.set("n", "<C-f>", function()
+    vim.keymap.set("n", "<C-a>", function()
       ui.nav_file(1)
-    end)
-    vim.keymap.set("n", "<C-t>", function()
+    end, { desc = "Go to marked file 1" })
+
+    vim.keymap.set("n", "<C-x>", function()
       ui.nav_file(2)
-    end)
+    end, { desc = "Go to marked file 2" })
   end,
 }

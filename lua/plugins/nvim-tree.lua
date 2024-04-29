@@ -14,13 +14,6 @@ return {
 				number = true,
 				relativenumber = true,
 			},
-			-- change folder arrow icons
-			icons = {
-				glyphs = {
-					folder = {},
-					git = {},
-				},
-			},
 			renderer = {
 				indent_markers = {
 					enable = true,

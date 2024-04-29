@@ -10,8 +10,8 @@ keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 -----------------
 
 -- increment/decrement numbers
-keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" }) -- increment
-keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" }) -- decrement
+--keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" }) -- increment
+--keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" }) -- decrement
 
 -- window management
 keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
@@ -40,10 +40,11 @@ keymap.set('v', '<', '<gv', opts)
 keymap.set('v', '>', '>gv', opts)
 
 -- center cursor when moving vertically 
-vim.api.nvim_set_keymap("n", "n", "nzzzv", opts)
-vim.api.nvim_set_keymap("n", "N", "Nzzzv", opts)
-vim.api.nvim_set_keymap("n", "{", "{zz", opts)
-vim.api.nvim_set_keymap("n", "<C-d>", "<C-d>zz", opts) -- zz centers your cursor
-vim.api.nvim_set_keymap("n", "<C-u>", "<C-u>zz", opts)
-vim.api.nvim_set_keymap("n", "}", "}zz", opts)
+-- Navigation and centering is handled by cinnamon.lua
+--vim.api.nvim_set_keymap("n", "n", "nzzzv", opts)
+--vim.api.nvim_set_keymap("n", "N", "Nzzzv", opts)
+--vim.api.nvim_set_keymap("n", "{", "{zz", opts)
+--vim.api.nvim_set_keymap("n", "<C-d>", "<C-d>zz", opts) -- zz centers your cursor
+--vim.api.nvim_set_keymap("n", "<C-u>", "<C-u>zz", opts)
+--vim.api.nvim_set_keymap("n", "}", "}zz", opts)
 
