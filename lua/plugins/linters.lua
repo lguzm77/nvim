@@ -18,6 +18,6 @@ return {
 			},
 		})
 
-		vim.keymap.set({ "n", "v" }, "<leader>gf", vim.lsp.buf.format, {})
+		vim.keymap.set({ "n", "v" }, "<leader>fa", vim.lsp.buf.format, {desc = "Format text"})
 	end,
 }

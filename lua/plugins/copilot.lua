@@ -12,27 +12,30 @@ return {
 		end,
 	},
 	{
+		-- config inspired by https://github.com/jellydn/lazy-nvim-ide/blob/main/lua/plugins/extras/copilot-chat-v2.lua
 		"CopilotC-Nvim/CopilotChat.nvim",
 		branch = "canary",
+    event = "VeryLazy",
 		dependencies = {
 			{ "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
 			{ "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
+			{ "nvim-telescope/telescope.nvim" }, -- use telescope for actions
 		},
 		opts = {
 			debug = true,
-			window = {
-				layout = "float",
-				relative = "cursor",
-				width = 1,
-				height = 0.4,
-				row = 1,
+			auto_follow_cursor = false,
+			mappings = {
+				-- Yank the diff in the response to register
+				yank_diff = {
+					normal = "gmy",
+				},
 			},
 		},
 		keys = {
 			{
 				"<leader>ccq",
 				function()
-					local input = vim.fn.input("Quick Chat: ")
+					local input = vim.ui.input("Quick Chat: ")
 					if input ~= "" then
 						require("CopilotChat").ask(input, { selection = require("CopilotChat.select").buffer })
 					end
@@ -56,5 +59,27 @@ return {
 				desc = "CopilotChat - Prompt actions",
 			},
 		},
+		config = function(_, opts)
+			local chat = require("CopilotChat")
+			local select = require("CopilotChat.select")
+			-- Use unnamed register for the selection
+			opts.selection = select.unnamed
+
+			chat.setup(opts)
+
+			-- Inline chat with Copilot
+			vim.api.nvim_create_user_command("CopilotChatInline", function(args)
+				chat.ask(args.args, {
+					selection = select.visual,
+					window = {
+						layout = "float",
+						relative = "cursor",
+						width = 1,
+						height = 0.4,
+						row = 1,
+					},
+				})
+			end, { nargs = "*", range = true })
+		end,
 	},
 }
