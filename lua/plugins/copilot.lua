@@ -15,7 +15,7 @@ return {
 		-- config inspired by https://github.com/jellydn/lazy-nvim-ide/blob/main/lua/plugins/extras/copilot-chat-v2.lua
 		"CopilotC-Nvim/CopilotChat.nvim",
 		branch = "canary",
-    event = "VeryLazy",
+		event = "VeryLazy",
 		dependencies = {
 			{ "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
 			{ "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
@@ -35,10 +35,11 @@ return {
 			{
 				"<leader>ccq",
 				function()
-					local input = vim.ui.input("Quick Chat: ")
-					if input ~= "" then
-						require("CopilotChat").ask(input, { selection = require("CopilotChat.select").buffer })
-					end
+					vim.ui.input({ prompt = "Quick Chat: " }, function(input)
+						if input ~= "" then
+							require("CopilotChat").ask(input, { selection = require("CopilotChat.select").buffer })
+						end
+					end)
 				end,
 				desc = "CopilotChat - Quick chat",
 			},
