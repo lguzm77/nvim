@@ -43,6 +43,8 @@ return {
         },
       })
 
+      lspconfig.marksman.setup({ capabilities = capabilities })
+
       -- TODO: explore more lsp functionalities and add keybindings
       vim.keymap.set("n", "<leader>k", vim.lsp.buf.hover, { desc = "Hover over word for lsp suggestions " })
       vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { desc = "Go to definition" })

@@ -39,9 +39,8 @@ To install lsps and linters, use the `:Mason command`
 
 ## Improvements
 
-- Add lsp/linter/renderer for Markdown Files
-- Grammar LSP 
 - Replace none-ls/null-ls
 - Add lsp/linter for bash 
 - Add lsp/linter for python3 
-- Re structure your plugins directory 
+- Re structure plugins directory 
+- Add support for obsidian
