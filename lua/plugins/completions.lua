@@ -1,5 +1,4 @@
 return {
-  { "github/copilot.vim" },
   {
     "hrsh7th/nvim-cmp",
     event = "InsertEnter", -- load plugin just before entering insert mode
