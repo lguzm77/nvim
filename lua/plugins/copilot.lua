@@ -30,9 +30,9 @@ return {
             accept = "<C-;>",
             accept_word = false,
             accept_line = false,
-            next = "<C-.>",
-            prev = "<C-,>",
-            dismiss = "<C-/>",
+            next = "<C-]>",
+            prev = "<C-,[",
+            dismiss = "<C-'>",
           },
         },
       })
