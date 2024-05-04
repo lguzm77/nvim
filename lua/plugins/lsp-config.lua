@@ -22,8 +22,14 @@ return {
 
 			mason_lspconfig.setup({
 				auto_install = true,
+        ensure_installed = {
+          "tsserver",
+          "gopls",
+          "omnisharp"
+        }
 			})
 
+      -- install linters and formatters
 			mason_tool_installer.setup({
 				ensure_installed = {
 					"prettier",
@@ -32,13 +38,7 @@ return {
 					"codespell",
 					"golangci-lint",
 					"gofumpt",
-					"gopls",
-					"lua-language-server",
-					"typescript-language-server",
-					"omnisharp",
 					"marksman",
-					"rust-analyzer",
-					"htmx-lsp",
 				},
 			})
 		end,
