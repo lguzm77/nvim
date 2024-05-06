@@ -21,15 +21,6 @@ keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  
 keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
 
-
-vim.api.nvim_set_keymap('n', '<C-h>', '<C-w>h', {noremap = true})
-vim.api.nvim_set_keymap('n', '<C-j>', '<C-w>j', {noremap = true})
-vim.api.nvim_set_keymap('n', '<C-k>', '<C-w>k', {noremap = true})
-vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l', {noremap = true})
-
-
-
-
 -- stop highlighting when searching
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 
@@ -51,8 +42,8 @@ keymap.set("v", ">", ">gv", opts)
 
 -- center cursor when moving vertically
 -- Navigation and centering is handled by cinnamon.lua
-vim.api.nvim_set_keymap("n", "n", "nzzzv", opts)
-vim.api.nvim_set_keymap("n", "N", "Nzzzv", opts)
+keymap.set("n", "n", "nzzzv", opts)
+keymap.set("n", "N", "Nzzzv", opts)
 --vim.api.nvim_set_keymap("n", "{", "{zz", opts)
 --vim.api.nvim_set_keymap("n", "<C-d>", "<C-d>zz", opts) -- zz centers your cursor
 --vim.api.nvim_set_keymap("n", "<C-u>", "<C-u>zz", opts)
