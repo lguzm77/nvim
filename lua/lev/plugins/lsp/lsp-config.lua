@@ -11,6 +11,15 @@ return {
 		local lspconfig = require("lspconfig")
 		local mason_lspconfig = require("mason-lspconfig")
 
+		mason_lspconfig.setup({
+			auto_install = true,
+			ensure_installed = {
+				"tsserver",
+				"gopls",
+				"omnisharp",
+			},
+		})
+
 		local keymap = vim.keymap
 
 		-- keymaps
