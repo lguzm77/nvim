@@ -3,7 +3,7 @@ return {
 	build = { "cp navigate_kitty.py ~/.config/kitty", "cp pass_keys.py ~/.config/kitty" },
 	keys = {
 		{
-      -- C keys don't work here, why?
+			-- C keys don't work here, why?
 			"<leader>h",
 			function()
 				require("kitty-navigator").navigateLeft()

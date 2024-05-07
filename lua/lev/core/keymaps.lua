@@ -9,6 +9,11 @@ keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 -- Normal mode --
 -----------------
 
+keymap.set('n', '<C-h>', '<C-w>h', {noremap = true})
+keymap.set('n', '<C-j>', '<C-w>j', {noremap = true})
+keymap.set('n', '<C-k>', '<C-w>k', {noremap = true})
+keymap.set('n', '<C-l>', '<C-w>l', {noremap = true})
+
 -- window management
 keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
 keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" }) -- split window horizontally
