@@ -26,6 +26,7 @@ keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 
 -- TODO: Add descriptions to each command
+--
 -- Resize with arrows
 -- delta: 2 lines
 keymap.set("n", "<C-Up>", ":resize -2<CR>", opts)
