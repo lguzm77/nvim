@@ -28,6 +28,7 @@ return {
 				"golangci-lint",
 				"gofumpt",
 				"marksman",
+        'js-debug-adapter',
 			},
 		})
 	end,

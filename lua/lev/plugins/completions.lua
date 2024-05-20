@@ -48,14 +48,13 @@ return {
 				}),
 
 				-- icons
+				-- TODO: fix the copilot completion icon
 				formatting = {
 					format = lspkind.cmp_format({
 						mode = "symbol",
-						symbol_map = {
-							{ Copilot = "" },
-						},
 						max_width = 50,
 						ellipsis_char = "...",
+						symbol_map = { Copilot = "" },
 					}),
 				},
 			})
