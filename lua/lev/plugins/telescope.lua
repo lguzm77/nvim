@@ -52,6 +52,7 @@ return {
 			})
 
 			telescope.load_extension("fzf")
+      telescope.load_extension("noice")
 
 			local keymap = vim.keymap
 

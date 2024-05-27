@@ -6,6 +6,7 @@ return {
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-buffer", -- source for text in buffer
 			"hrsh7th/cmp-path", -- ssource for file system paths
+			"hrsh7th/cmp-cmdline", -- source for command line completions
 			"saadparwaiz1/cmp_luasnip",
 			"rafamadriz/friendly-snippets",
 			"L3MON4D3/LuaSnip",
@@ -48,7 +49,6 @@ return {
 				}),
 
 				-- icons
-				-- TODO: fix the copilot completion icon
 				formatting = {
 					format = lspkind.cmp_format({
 						mode = "symbol",
@@ -57,6 +57,25 @@ return {
 						symbol_map = { Copilot = "" },
 					}),
 				},
+			})
+
+			-- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
+			cmp.setup.cmdline({ "/", "?" }, {
+				mapping = cmp.mapping.preset.cmdline(),
+				sources = {
+					{ name = "buffer" },
+				},
+			})
+
+			-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+			cmp.setup.cmdline(":", {
+				mapping = cmp.mapping.preset.cmdline(),
+				sources = cmp.config.sources({
+					{ name = "path" },
+				}, {
+					{ name = "cmdline" },
+				}),
+				matching = { disallow_symbol_nonprefix_matching = false },
 			})
 		end,
 	},
