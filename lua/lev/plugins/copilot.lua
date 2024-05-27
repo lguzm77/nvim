@@ -49,7 +49,7 @@ return {
 			{ "nvim-telescope/telescope.nvim" }, -- use telescope for actions
 		},
 		opts = {
-			debug = true,
+			debug = false,
 			auto_follow_cursor = false,
 			prompts = prompts,
 			mappings = {
