@@ -77,6 +77,21 @@ return {
 				}),
 				matching = { disallow_symbol_nonprefix_matching = false },
 			})
+
+			-- toggle cmp
+			local function toggle_autocomplete()
+				local current_setting = cmp.get_config().completion.autocomplete
+				if current_setting and #current_setting > 0 then
+					cmp.setup({ completion = { autocomplete = false } })
+					print("Autocomplete disabled")
+				else
+					cmp.setup({ completion = { autocomplete = { cmp.TriggerEvent.TextChanged } } })
+					print("Autocomplete enabled")
+				end
+			end
+
+			vim.api.nvim_create_user_command("NvimCmpToggle", toggle_autocomplete, {})
+			vim.keymap.set("n", "<leader>ac", ":NvimCmpToggle<CR>", { desc = "Toggle autocomplete" })
 		end,
 	},
 }
