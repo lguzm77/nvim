@@ -25,12 +25,12 @@ return {
 
 			telescope.setup({
 				defaults = {
+					path_display = { "truncate" },
 					layout_config = {
 						horizontal = {
 							preview_width = 0.5, -- make preview window occupy 50% of the screen
 						},
 					},
-					path_display = { "smart" },
 					mappings = {
 						i = {
 							["<C-k>"] = actions.move_selection_previous, -- move to prev result
@@ -51,8 +51,12 @@ return {
 				end,
 			})
 
+      -- TODO: check what other extensions are available to you.
+      -- Do any enhance your workflow? Why? 
 			telescope.load_extension("fzf")
-      telescope.load_extension("noice")
+			telescope.load_extension("noice")
+			-- TODO: what does this extension do?
+			telescope.load_extension("ui-select")
 
 			local keymap = vim.keymap
 
