@@ -36,7 +36,10 @@ return {
 							["<C-k>"] = actions.move_selection_previous, -- move to prev result
 							["<C-j>"] = actions.move_selection_next, -- move to next result
 							["<C-q>"] = actions.send_selected_to_qflist + custom_actions.open_trouble_qflist,
-							["<C-t>"] = trouble_telescope.smart_open_with_trouble,
+							["<C-t>"] = trouble_telescope.smart_open_with_trouble, -- TODO: smart_open_with_trouble is deprecated!
+							-- TODO: what do these do?
+							-- ["<C-s>"] = actions.cycle_previewers_next,
+							-- ["<C-a>"] = actions.cycle_history_prev,
 						},
 					},
 				},
@@ -51,8 +54,8 @@ return {
 				end,
 			})
 
-      -- TODO: check what other extensions are available to you.
-      -- Do any enhance your workflow? Why? 
+			-- TODO: check what other extensions are available to you.
+			-- Do any enhance your workflow? Why?
 			telescope.load_extension("fzf")
 			telescope.load_extension("noice")
 			-- TODO: what does this extension do?
@@ -65,9 +68,9 @@ return {
 			keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
 			keymap.set(
 				"n",
-				"<leader>fc",
+				"<leader>fw",
 				"<cmd>Telescope grep_string<cr>",
-				{ desc = "Find string under cursor in cwd" }
+				{ desc = "Find word under cursor in cwd" }
 			)
 			keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
 		end,
