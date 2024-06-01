@@ -63,7 +63,7 @@ return {
 
 			local keymap = vim.keymap
 			local builtin = require("telescope.builtin")
-      local themes = require("telescope.themes")
+			local themes = require("telescope.themes")
 
 			keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
 			keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
@@ -72,12 +72,13 @@ return {
 			keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
 			keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "Find Keymaps" })
 			keymap.set("n", "<leader>/", function()
-				builtin.current_buffer_fuzzy_find(themes.get_dropdown({te
+				builtin.current_buffer_fuzzy_find(themes.get_dropdown({
 					winblend = 10,
 					previewer = false,
 					layout_config = { width = 0.7 },
 				}))
 			end, { desc = "[/] Fuzzy search in current buffer" })
+			keymap.set("n", "<leader>gc", builtin.git_commits, { desc = "search commits for buffer" })
 		end,
 	},
 	{
