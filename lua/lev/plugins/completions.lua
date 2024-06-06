@@ -1,3 +1,4 @@
+local enableCopilot = true
 return {
 	{
 		"hrsh7th/nvim-cmp",
@@ -22,6 +23,14 @@ return {
 
 			copilot.setup()
 
+			local completion_sources = {
+				{ name = "nvim_lsp" },
+				{ name = "luasnip" },
+				{ name = "buffer" }, -- text within the current buffer
+				{ name = "path" }, -- file system paths
+				{ name = "copilot" },
+			}
+
 			vim.opt.completeopt = "menu,menuone,noselect"
 			cmp.setup({
 				snippet = {
@@ -40,19 +49,14 @@ return {
 					["<C-e>"] = cmp.mapping.abort(),
 					["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 				}),
-				sources = cmp.config.sources({
-					{ name = "copilot" },
-					{ name = "nvim_lsp" },
-					{ name = "luasnip" },
-					{ name = "buffer" }, -- text within current buffer
-					{ name = "path" }, -- file system paths
-				}),
+				sources = cmp.config.sources(completion_sources),
 
+				--
 				-- icons
 				formatting = {
 					format = lspkind.cmp_format({
 						mode = "symbol",
-						max_width = 50,
+						max_width = 300,
 						ellipsis_char = "...",
 						symbol_map = { Copilot = "" },
 					}),
@@ -78,20 +82,16 @@ return {
 				matching = { disallow_symbol_nonprefix_matching = false },
 			})
 
-			-- toggle cmp
-			local function toggle_autocomplete()
-				local current_setting = cmp.get_config().completion.autocomplete
-				if current_setting and #current_setting > 0 then
-					cmp.setup({ completion = { autocomplete = false } })
-					print("Autocomplete disabled")
-				else
-					cmp.setup({ completion = { autocomplete = { cmp.TriggerEvent.TextChanged } } })
-					print("Autocomplete enabled")
+			vim.keymap.set("n", "<leader>ac", function()
+				enableCopilot = not enableCopilot
+				if not enableCopilot then
+					table.remove(completion_sources, table.maxn(completion_sources)) -- copilot will be the last element
+				elseif completion_sources[{ name = "copilot" }] == nil then
+					table.insert(completion_sources, { name = "copilot" })
 				end
-			end
-
-			vim.api.nvim_create_user_command("NvimCmpToggle", toggle_autocomplete, {})
-			vim.keymap.set("n", "<leader>ac", ":NvimCmpToggle<CR>", { desc = "Toggle autocomplete" })
+				require("cmp").setup({ sources = cmp.config.sources(completion_sources) })
+				vim.notify("Copilot cmp is now " .. (enableCopilot and "enabled" or "disabled"))
+			end, { desc = "Toggle autocomplete" })
 		end,
 	},
 }
