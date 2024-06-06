@@ -5,7 +5,7 @@ return {
 		local conform = require("conform")
 
 		conform.setup({
-			-- install additional formatters via Lazy
+			-- install additional formatters via Mason 
 			formatters_by_ft = {
 				lua = { "stylua" },
 				javascript = { "prettier" },
@@ -13,6 +13,7 @@ return {
 				yaml = { "prettier" },
 				csharp = { "csharpier" },
 				["*"] = { "codespell" },
+        go = { "gofumpt" },
 			},
 		})
 
@@ -22,6 +23,6 @@ return {
 				async = false,
 				timeout_ms = 500,
 			})
-		end, { desc = "Format file or range (in visial)" })
+		end, { desc = "Format file or range (in visual)" })
 	end,
 }
