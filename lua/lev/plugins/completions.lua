@@ -28,8 +28,10 @@ return {
 				{ name = "luasnip" },
 				{ name = "buffer" }, -- text within the current buffer
 				{ name = "path" }, -- file system paths
-				{ name = "copilot" },
 			}
+
+			-- Guarantee that copilot is the last element
+			table.insert(completion_sources, { name = "copilot" })
 
 			vim.opt.completeopt = "menu,menuone,noselect"
 			cmp.setup({
@@ -43,20 +45,21 @@ return {
 					documentation = cmp.config.window.bordered(),
 				},
 				mapping = cmp.mapping.preset.insert({
-					["<C-c>"] = cmp.mapping.scroll_docs(-4),
-					["<C-d>"] = cmp.mapping.scroll_docs(4),
+					["<C-j>"] = cmp.mapping.scroll_docs(-4),
+					["<C-k>"] = cmp.mapping.scroll_docs(4),
 					["<C-Space>"] = cmp.mapping.complete(),
 					["<C-e>"] = cmp.mapping.abort(),
 					["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 				}),
 				sources = cmp.config.sources(completion_sources),
 
-				--
 				-- icons
 				formatting = {
 					format = lspkind.cmp_format({
 						mode = "symbol",
-						max_width = 300,
+						max_width = function()
+							return math.floor(0.45 * vim.o.columns)
+						end,
 						ellipsis_char = "...",
 						symbol_map = { Copilot = "" },
 					}),
